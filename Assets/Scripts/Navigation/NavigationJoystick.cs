@@ -37,8 +37,9 @@ public class NavigationJoystick : MonoBehaviour
         // Si la valeur est significative (non nulle), déplacer le joueur
         if (thumbstickValue != Vector2.zero)
         {
-            Vector3 direction = new Vector3(thumbstickValue.x, 0, thumbstickValue.y) * MoveSpeed * Time.deltaTime;
-            Player.transform.position += direction;
+            Vector3 inputDirection = new Vector3(thumbstickValue.x, 0, thumbstickValue.y);
+            Vector3 moveDirection = Player.transform.TransformDirection(inputDirection) * MoveSpeed * Time.deltaTime;
+            Player.transform.position += moveDirection;
         }
     }
 
