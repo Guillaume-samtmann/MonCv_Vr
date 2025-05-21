@@ -3,27 +3,7 @@ guid: b0c9fc8a24ac0f541964bac7815f8fd9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rock
-    second: {fileID: 2100000, guid: 86549563b36dd004a93893d8817d241b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sol
-    second: {fileID: 2100000, guid: 26456b8f174258445abccd2e8db60bd8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tapis
-    second: {fileID: 2100000, guid: c566eb6c23b40834e9fb8f2ff2127b5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: woods
-    second: {fileID: 2100000, guid: 71cea8005a2fdef45b289c3f4e8620e9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
