@@ -20,6 +20,14 @@ public class canvaExperience : MonoBehaviour
     public GameObject menuPassion;
     public GameObject LesCourse;
 
+    [Header("Les course")]
+    public GameObject course1;
+    public GameObject course2;
+    public GameObject course3;
+    public GameObject course4;
+    public GameObject course5;
+    public GameObject btnGauche;
+    public GameObject btnDroit;
 
     private void OnEnable()
     {
@@ -73,6 +81,21 @@ public class canvaExperience : MonoBehaviour
                 button.onClick.Invoke();
                 showAllCourse();
             }
+            if(button.gameObject.name == "Droite")
+            {
+                button.onClick.Invoke();
+                showImgCourse();
+            }
+            if (button.gameObject.name == "Gauche")
+            {
+                button.onClick.Invoke();
+                showImgCourseGauche();
+            }
+            if (button.gameObject.name == "retourCourse")
+            {
+                button.onClick.Invoke();
+                retourCourse();
+            }
         }
     }
 
@@ -115,5 +138,62 @@ public class canvaExperience : MonoBehaviour
     {
         menuPassion.SetActive(false);
         LesCourse.SetActive(true);
+    }
+    public void showImgCourse()
+    {
+        if (course1.activeInHierarchy)
+        {
+            course1.SetActive(false);
+            course2.SetActive(true);
+            btnGauche.SetActive(true);
+        }
+        else if (course2.activeInHierarchy)
+        {
+            course2.SetActive(false);
+            course3.SetActive(true);
+        }
+        else if (course3.activeInHierarchy)
+        {
+            course3.SetActive(false);
+            course4.SetActive(true);
+        }
+        else if (course4.activeInHierarchy)
+        {
+            course4.SetActive(false);
+            course5.SetActive(true);
+            btnDroit.SetActive(false);
+        }
+    }
+
+    public void showImgCourseGauche()
+    {
+        if (course2.activeInHierarchy)
+        {
+            course2.SetActive(false);
+            course1.SetActive(true);
+            btnGauche.SetActive(false);
+        }
+        else if (course3.activeInHierarchy)
+        {
+            course3.SetActive(false);
+            course2.SetActive(true);
+        }
+        else if (course4.activeInHierarchy)
+        {
+            course4.SetActive(false);
+            course3.SetActive(true);
+        }
+        else if (course5.activeInHierarchy)
+        {
+            course5.SetActive(false);
+            course4.SetActive(true);
+            btnDroit.SetActive(true);
+        }
+    }
+
+    public void retourCourse()
+    {
+        menuPassion.SetActive(true);
+        LesCourse.SetActive(false);
     }
 }
