@@ -20,14 +20,14 @@ public class VRScrollHandler : MonoBehaviour
     private void OnEnable()
     {
         primaryButtonAction.action.Enable();
-        primaryButtonAction.action.started += OnPrimaryButtonPressed;
-        primaryButtonAction.action.canceled += OnPrimaryButtonReleased;
+        primaryButtonAction.action.performed += OnPrimaryButtonPressed;
+        primaryButtonAction.action.performed += OnPrimaryButtonReleased;
     }
 
     private void OnDisable()
     {
-        primaryButtonAction.action.started -= OnPrimaryButtonPressed;
-        primaryButtonAction.action.canceled -= OnPrimaryButtonReleased;
+        primaryButtonAction.action.performed -= OnPrimaryButtonPressed;
+        primaryButtonAction.action.performed -= OnPrimaryButtonReleased;
         primaryButtonAction.action.Disable();
     }
 
