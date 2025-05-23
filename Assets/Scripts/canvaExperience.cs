@@ -19,6 +19,7 @@ public class canvaExperience : MonoBehaviour
     [Header("UI Panels passion")]
     public GameObject menuPassion;
     public GameObject LesCourse;
+    public GameObject Lesrando;
 
     [Header("Les course")]
     public GameObject course1;
@@ -29,6 +30,14 @@ public class canvaExperience : MonoBehaviour
     public GameObject btnGauche;
     public GameObject btnDroit;
 
+    [Header("Les Rando")]
+    public GameObject rando1;
+    public GameObject rando2;
+    public GameObject rando3;
+    public GameObject rando4;
+    public GameObject rando5;
+    public GameObject btnGaucheRando;
+    public GameObject btnDroitRando;
     private void OnEnable()
     {
         triggerAction.action.performed += OnInteract;
@@ -81,20 +90,35 @@ public class canvaExperience : MonoBehaviour
                 button.onClick.Invoke();
                 showAllCourse();
             }
-            if(button.gameObject.name == "Droite")
+            if (button.gameObject.name == "ButtonRando")
+            {
+                button.onClick.Invoke();
+                showAllRando();
+            }
+            if (button.gameObject.name == "Droite")
             {
                 button.onClick.Invoke();
                 showImgCourse();
             }
+            if (button.gameObject.name == "DroiteRando")
+            {
+                button.onClick.Invoke();
+                showImgRando();
+            }
             if (button.gameObject.name == "Gauche")
             {
                 button.onClick.Invoke();
-                showImgCourseGauche();
+                showImgCourseGauche(); 
+            }
+            if (button.gameObject.name == "GaucheRando")
+            {
+                button.onClick.Invoke();
+                showImgRandoGauche();
             }
             if (button.gameObject.name == "retourCourse")
             {
                 button.onClick.Invoke();
-                retourCourse();
+                btnRetour();
             }
         }
     }
@@ -138,6 +162,11 @@ public class canvaExperience : MonoBehaviour
     {
         menuPassion.SetActive(false);
         LesCourse.SetActive(true);
+    }
+    public void showAllRando()
+    {
+        menuPassion.SetActive(false);
+        Lesrando.SetActive(true);
     }
     public void showImgCourse()
     {
@@ -191,9 +220,68 @@ public class canvaExperience : MonoBehaviour
         }
     }
 
-    public void retourCourse()
+    public void btnRetour()
     {
-        menuPassion.SetActive(true);
-        LesCourse.SetActive(false);
+        if (LesCourse.activeInHierarchy)
+        {
+            menuPassion.SetActive(true);
+            LesCourse.SetActive(false);
+        }else if (Lesrando.activeInHierarchy)
+        {
+            menuPassion.SetActive(true);
+            Lesrando.SetActive(false);
+        }
+    }
+
+    public void showImgRando()
+    {
+        if (rando1.activeInHierarchy)
+        {
+            rando1.SetActive(false);
+            rando2.SetActive(true);
+            btnGaucheRando.SetActive(true);
+        }
+        else if (rando2.activeInHierarchy)
+        {
+            rando2.SetActive(false);
+            rando3.SetActive(true);
+        }
+        else if (rando3.activeInHierarchy)
+        {
+            rando3.SetActive(false);
+            rando4.SetActive(true);
+        }
+        else if (rando4.activeInHierarchy)
+        {
+            rando4.SetActive(false);
+            rando5.SetActive(true);
+            btnDroitRando.SetActive(false);
+        }
+    }
+
+    public void showImgRandoGauche()
+    {
+        if (rando2.activeInHierarchy)
+        {
+            rando2.SetActive(false);
+            rando1.SetActive(true);
+            btnGaucheRando.SetActive(false);
+        }
+        else if (rando3.activeInHierarchy)
+        {
+            rando3.SetActive(false);
+            rando2.SetActive(true);
+        }
+        else if (rando4.activeInHierarchy)
+        {
+            rando4.SetActive(false);
+            rando3.SetActive(true);
+        }
+        else if (rando5.activeInHierarchy)
+        {
+            rando5.SetActive(false);
+            rando4.SetActive(true);
+            btnDroitRando.SetActive(true);
+        }
     }
 }
