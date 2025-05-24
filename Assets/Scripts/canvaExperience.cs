@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class canvaExperience : MonoBehaviour
@@ -120,9 +121,18 @@ public class canvaExperience : MonoBehaviour
                 button.onClick.Invoke();
                 btnRetour();
             }
+            if (button.gameObject.name == "ButtonCine")
+            {
+                button.onClick.Invoke();
+                LoadCinema();
+            }
         }
     }
 
+    public void LoadCinema()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void ShowNextPanel()
     {
         panel1.SetActive(false);
